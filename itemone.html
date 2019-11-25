@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+    <head>
+		<meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <link rel="preload" href="stylesheet/css/prod.css" as="style">
+        <link rel="stylesheet" href="stylesheet/css/prod.css">
+        <title>Item_one</title>
+    </head>
+    <body>
+		<main>
+			<aside id="exp">
+				<a href="index.html" id="back">
+					<em>Back
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H6M12 5l-7 7 7 7"/></svg>
+					</em>
+				</a>
+				<section>
+					<header>
+						<img src="icons/witch.svg" alt="witch illustration" class="witch">
+						<h2>Augustė Pilipavičiūtė</h2>
+						<span>Work</span>
+					</header>
+					<dl>
+						<dt>Some name of project</dt>
+						<dd><p>Date Live</p><hr><p>2019</p></dd>
+						<dd><p>Client</p><hr><p>Zivile smirda</p></dd>
+					</dl>
+					<figure>
+						<img src="https://leap.mediumra.re/assets/img/portfolio-item-1.jpg">
+						<img src="https://leap.mediumra.re/assets/img/portfolio-item-2.jpg">
+						<img src="https://leap.mediumra.re/assets/img/portfolio-item-3.jpg">
+					</figure>
+					&nbsp;
+				</section>
+			</aside>
+		</main>
+		<script>
+			window.onload = function() {
+				var sec = document.querySelector('section');
+				sec.style.transform ="translate3d(0, 0, 0)";
+				sec.style.opacity = "1";
+				sec.style.transition = "all .3s ease";
+			};
+		</script>
+    </body>
+</html>

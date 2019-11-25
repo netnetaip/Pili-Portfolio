@@ -1,0 +1,372 @@
+#exp section dl dd, #two section div, aside, body, #exp section figure, #one section div figure a, #one section div figure, aside section header, aside section, aside button, aside #back {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#one section div figure img {
+  display: block;
+  height: auto;
+  width: 100%;
+  -o-object-fit: contain;
+  object-fit: contain;
+  -o-object-position: center;
+  object-position: center;
+}
+
+#one section div {
+  display: -ms-grid;
+  display: grid;
+}
+
+#exp section figure, #one section div figure a, #one section div figure, aside section header, aside section, aside button, aside #back {
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+
+#exp section dl dd, #two section div, aside, body {
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+aside button em, aside #back em, main {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+#two section div, #one section div, aside, main, body {
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -ms-flex-line-pack: flex-start;
+  align-content: flex-start;
+}
+
+#exp section figure, #exp section dl dd, #one section div figure a, #one section div figure, aside section header, aside section, aside button em, aside #back em, aside button, aside #back {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+}
+
+#exp section figure, #exp section dl dd, #one section div figure, aside section, main {
+  -webkit-box-pack: flex-start;
+  -ms-flex-pack: flex-start;
+  justify-content: flex-start;
+}
+
+#two section div, #one section div figure a, aside section header, aside button em, aside #back em, aside button, aside #back, body {
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+#one section div {
+  -webkit-box-pack: space-between;
+  -ms-flex-pack: space-between;
+  justify-content: space-between;
+}
+
+aside {
+  -webkit-box-pack: flex-end;
+  -ms-flex-pack: flex-end;
+  justify-content: flex-end;
+}
+
+:root {
+  font-size: 16px;
+}
+
+@font-face {
+  font-family: OCFormatSans-Dm;
+  src: url("../../fonts/OCFormatSans-Dm.woff");
+}
+@font-face {
+  font-family: OCFormatSans-Md;
+  src: url("../../fonts/OCFormatSans-Md.woff");
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background: #F2CEC3;
+}
+
+main {
+  height: 100%;
+  width: 100%;
+  background: #F2CCC0;
+  will-change: transform;
+}
+
+a, button, h1, h2, h3, h4, h5, figcaption, p, b, em, li, dt, dd, noscript, abbr, address, span {
+  font-weight: normal;
+  line-height: 1.4;
+  text-decoration: none;
+  font-style: normal;
+  letter-spacing: 0.02rem;
+  color: #E60000;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button, h1, h2, h3, h4, h5, b, li, dt, address, span {
+  font-family: "OCFormatSans-Dm", sans-serif;
+}
+
+a, figcaption, p, li, dd, noscript {
+  font-family: "OCFormatSans-Md", sans-serif;
+}
+
+span {
+  font-size: 2rem;
+  letter-spacing: 0.04rem;
+}
+
+h4 {
+  font-size: 1.7rem;
+  letter-spacing: 0.04rem;
+}
+
+h3, dt {
+  font-size: 1.4rem;
+  letter-spacing: 0.04rem;
+}
+
+em {
+  font-size: 1.3rem;
+  letter-spacing: 0.08rem;
+}
+
+p, h2, dd {
+  font-size: 1rem;
+  letter-spacing: 0.04rem;
+}
+
+figcaption, address {
+  font-size: 0.9rem;
+  letter-spacing: 0.06rem;
+}
+
+aside {
+  flex-wrap: nowrap;
+  height: 100%;
+  min-width: 100%;
+  max-width: 100%;
+  background: #F2CCC0;
+}
+aside button, aside #back {
+  order: 2;
+  height: 100%;
+  min-width: 16vmin;
+  max-width: 16vmin;
+  outline: none;
+  border: none;
+  background: #E60000;
+  position: relative;
+  z-index: 100;
+}
+aside button:hover, aside #back:hover {
+  cursor: pointer;
+}
+aside button svg, aside #back svg {
+  height: 4vmin;
+  width: 4vmin;
+  stroke: #F2CEC3;
+  stroke-width: 2;
+  fill: none;
+  margin-left: 2rem;
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+aside button em, aside #back em {
+  -webkit-transform: rotate(270deg);
+  -ms-transform: rotate(270deg);
+  transform: rotate(270deg);
+  color: #F2CCC0;
+  white-space: nowrap;
+}
+aside section {
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+}
+aside section header {
+  min-height: 30%;
+  width: 100%;
+  position: relative;
+  margin: 0 0 8vmin;
+}
+aside section .witch {
+  height: 18vmin;
+  display: block;
+  position: absolute;
+  margin: 4vmin 10vmin 0;
+}
+
+#one section {
+  opacity: 0;
+  min-height: 100%;
+  max-height: 100%;
+  padding-bottom: 6vmin;
+}
+#one section div {
+  grid-gap: 8vmin 0;
+  min-height: 100%;
+  width: 60vw;
+}
+#one section div figure a {
+  overflow: hidden;
+  height: 100%;
+  width: 32vmin;
+  border-radius: 2vmin;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+#one section div figure img {
+  transition: all 0.2s ease;
+}
+#one section div figure img:hover {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
+#one section div figure h3 {
+  padding: 1vmin 1vmin 0;
+}
+#one section div figure figcaption {
+  padding: 0 1vmin;
+}
+
+#two section div {
+  min-height: 100%;
+  width: 100%;
+}
+#two section div div {
+  flex-wrap: nowrap;
+  min-height: auto;
+  width: 60vw;
+  margin-bottom: 6vmin;
+}
+#two section div div img {
+  width: 20vmin;
+  margin-right: 6vmin;
+}
+#two section div div article {
+  width: 100%;
+}
+#two section div div article p abbr {
+  border-bottom: 2px solid #E60000;
+}
+#two section div div article p abbr:hover {
+  cursor: help;
+}
+
+hr {
+  border: none;
+  border-top: 3px dotted #F2CEC3;
+  background-color: #E60000;
+  height: 1px;
+  width: 100%;
+  margin: 0 4vmin;
+}
+
+#exp section {
+  -webkit-transform: translate3d(-20vmin, 0, 0);
+  -ms-transform: translate3d(-20vmin, 0, 0);
+  transform: translate3d(-20vmin, 0, 0);
+  padding: 0 0 6vmin;
+  opacity: 0;
+}
+#exp section dl {
+  margin: 0 0 6vmin;
+  width: 80%;
+}
+#exp section dl dd {
+  flex-wrap: nowrap;
+  margin: 1vmin 0;
+}
+#exp section dl dd p {
+  white-space: nowrap;
+}
+#exp section figure {
+  width: 100%;
+}
+#exp section figure img {
+  width: 80%;
+}
+#exp section figure img:first-of-type {
+  border-radius: 4vmin 4vmin 0 0;
+}
+#exp section figure img:last-of-type {
+  border-radius: 0 0 4vmin 4vmin;
+}
+
+@media screen and (min-width: 768px) {
+  #one button em svg, #one #back em svg {
+    height: 4vmin;
+    width: 4vmin;
+  }
+  #one section div {
+    grid-template-columns: repeat(3, auto);
+    margin: 4vmin 0 0;
+  }
+}
+@media screen and (max-width: 768px) {
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  aside section header {
+    align-content: flex-start;
+    align-items: flex-start;
+    min-height: 25%;
+    padding: 0 10vmin 0;
+    margin: 0 0 8vmin;
+  }
+  aside section .witch {
+    height: 22vmin;
+    display: block;
+    position: absolute;
+    margin: 10vmin 0 0;
+  }
+
+  #one button em svg, #one #back em svg, #two button em svg, #two #back em svg {
+    height: 6vmin;
+    width: 6vmin;
+  }
+
+  #one section div {
+    width: 100%;
+  }
+  #one section div figure {
+    width: 100%;
+  }
+  #one section div figure a {
+    height: 100%;
+    width: 80%;
+    margin-bottom: 2vmin;
+  }
+
+  #two div div {
+    flex-direction: column;
+    width: 80%;
+  }
+  #two div div img {
+    width: 24vmin;
+    margin-bottom: 2vmin;
+  }
+}
+
+/*# sourceMappingURL=prod.css.map */

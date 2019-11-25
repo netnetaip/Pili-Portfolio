@@ -1,0 +1,575 @@
+
+// Colors
+$black-0: #1F1F1F;
+$pink-0: #E60000;
+$pink-1: #F2CEC3;
+$pink-2: #F2CCC0;
+
+// Animation
+$fast: all .15s ease;
+$slow: all .3s ease;
+
+// Reusables
+$mw: 1440px;
+$pt: 2vmin;
+$border: 2px solid $pink-0;
+
+// Mixins
+@mixin transform($property)
+    {
+    -webkit-transform: $property;
+    -ms-transform: $property;
+    transform: $property;
+    }
+	
+// Extend
+%flex
+	{
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	}
+%object
+	{
+	display: block;
+	height: auto;
+	width: 100%;
+	-o-object-fit: contain;
+	object-fit: contain;
+	-o-object-position: center;
+	object-position: center;
+	}
+
+// Display
+%grid
+	{
+	display: -ms-grid;
+	display: grid;
+	}
+%flex-col
+    {
+	@extend %flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    }
+%flex-row
+    {
+	@extend %flex;
+    flex-direction: row;
+	flex-wrap: wrap;
+    }
+%flex-inl
+    {
+	display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    }
+
+// Alignment Block
+%al-s
+    {
+    -webkit-box-align: flex-start;
+	-ms-flex-align: flex-start;
+	align-items: flex-start;
+	-ms-flex-line-pack: flex-start;
+    align-content: flex-start;
+    }
+%al-c-s
+    {
+    -webkit-box-align: flex-start;
+	-ms-flex-align: flex-start;
+	align-items: flex-start;
+	-ms-flex-line-pack: center;
+    align-content: center;
+    }
+%al-c-c
+    {
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-ms-flex-line-pack: center;
+    align-content: center;
+    }
+%al-t
+    {
+    -webkit-box-align: stretch;
+	-ms-flex-align: stretch;
+	align-items: stretch;
+	-ms-flex-line-pack: stretch;
+    align-content: stretch;
+    }
+%al-e
+    {
+    -webkit-box-align: flex-end;
+	-ms-flex-align: flex-end;
+	align-items: flex-end;
+	-ms-flex-line-pack: flex-end;
+    align-content: flex-end;
+    }
+
+// Justify Block
+%js-s
+    {
+    -webkit-box-pack: flex-start;
+	-ms-flex-pack: flex-start;
+	justify-content: flex-start;
+    }
+%js-c
+    {
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+    }
+%js-b
+    {
+    -webkit-box-pack: space-between;
+	-ms-flex-pack: space-between;
+	justify-content: space-between;
+    }
+%js-e
+    {
+    -webkit-box-pack: flex-end;
+	-ms-flex-pack: flex-end;
+	justify-content: flex-end;
+    }
+	
+// Root
+:root
+	{
+	font-size: 16px;
+	}
+	
+// Font
+@font-face
+	{
+	font-family: OCFormatSans-Dm;
+	src: url('../../fonts/OCFormatSans-Dm.woff');
+	}
+@font-face
+	{
+	font-family: OCFormatSans-Md;
+	src: url('../../fonts/OCFormatSans-Md.woff');
+	}
+	
+// Semantic
+*
+	{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	}
+html, body
+	{
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	}
+body
+	{
+	@extend %flex-row;
+	@extend %al-s;
+	@extend %js-c;
+	background: $pink-1;
+	}
+main
+	{
+	@extend %flex-inl;
+	@extend %al-s;
+	@extend %js-s;
+	height: 100%;
+	width: 100%;
+	background: $pink-2;
+	will-change: transform;
+	}
+	
+// Font Family
+a, button, h1, h2, h3, h4, h5, figcaption, p, b, em, li, dt, dd, noscript, abbr, address, span
+	{
+	font-weight: normal;
+	line-height: 1.4;
+	text-decoration: none;
+	font-style: normal;
+	letter-spacing: .02rem;
+	color: $pink-0;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	}
+button, h1, h2, h3, h4, h5, b, li, dt, address, span
+	{
+	font-family: 'OCFormatSans-Dm', sans-serif;
+	}
+a, figcaption, p, li, dd, noscript
+	{
+	font-family: 'OCFormatSans-Md', sans-serif;
+	}
+
+// Font Size || Weight || Letter Spacing
+span
+	{
+	font-size: 2rem;
+	letter-spacing: .04rem;
+	}
+h4
+	{
+	font-size: 1.7rem;
+	letter-spacing: .04rem;
+	}
+h3, dt
+	{
+	font-size: 1.4rem;
+	letter-spacing: .04rem;
+	}
+em
+	{
+	font-size: 1.3rem;
+	letter-spacing: .08rem;
+	}
+p, h2, dd
+	{
+	font-size: 1rem;
+	letter-spacing: .04rem;
+	}
+figcaption, address
+	{
+	font-size: .9rem;
+	letter-spacing: .06rem;
+	}
+	
+// Containers
+aside
+	{
+	@extend %flex-row;
+	@extend %al-s;
+	@extend %js-e;
+	flex-wrap: nowrap;
+	height: 100%;
+	min-width: 100%;
+	max-width: 100%;
+	background: $pink-2;
+	button, #back
+		{
+		@extend %flex-col;
+		@extend %al-c-c;
+		@extend %js-c;
+		order: 2;
+		height: 100%;
+		min-width: $pt * 8;
+		max-width: $pt * 8;
+		outline: none;
+		border: none;
+		background: $pink-0;
+		position: relative;
+		z-index: 100;
+		&:hover
+			{
+			cursor: pointer;
+			}
+		svg
+			{
+			height: $pt * 2;
+			width: $pt * 2;
+			stroke: $pink-1;
+			stroke-width: 2;
+			fill: none;
+			margin-left: 2rem;
+			@include transform(rotate(90deg));
+			}
+		em
+			{
+			@extend %flex-inl;
+			@extend %al-c-c;
+			@extend %js-c;
+			@include transform(rotate(270deg));
+			color: $pink-2;
+			white-space: nowrap;
+			}
+		}
+	section
+		{
+		@extend %flex-col;
+		@extend %al-c-c;
+		@extend %js-s;
+		height: 100%;
+		width: 100%;
+		overflow: auto;
+		header
+			{
+			@extend %flex-col;
+			@extend %al-c-c;
+			@extend %js-c;
+			min-height: 30%;
+			width: 100%;
+			position: relative;
+			margin: 0 0 ($pt * 4);
+			}
+		.witch
+			{
+			height: $pt * 9;
+			display: block;
+			position: absolute;
+			margin: ($pt * 2 )($pt * 5 ) 0;
+			}
+		}
+	}
+#one 
+	{
+	section
+		{
+		opacity: 0;
+		min-height: 100%;
+		max-height: 100%;
+		padding-bottom: $pt * 3;
+		div
+			{
+			@extend %grid;
+			@extend %al-s;
+			@extend %js-b;
+			grid-gap: ($pt * 4) 0;
+			min-height: 100%;
+			width: 60vw;
+			figure
+				{
+				@extend %flex-col;
+				@extend %al-c-c;
+				@extend %js-s;
+				a
+					{
+					@extend %flex-col;
+					@extend %al-c-c;
+					@extend %js-c;
+					overflow: hidden;
+					height: 100%;
+					width: $pt * 16;
+					border-radius: $pt;
+					box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+					}
+				img
+					{
+					@extend %object;
+					transition: all .2s ease;
+					&:hover
+						{
+						@include transform(scale(1.1));
+						}
+					}
+				h3
+					{
+					padding: ($pt / 2) ($pt / 2) 0;
+					}
+				figcaption
+					{
+					padding: 0 ($pt / 2);
+					}
+				}
+			}
+		}
+	}
+#two
+	{
+	section
+		{
+		div
+			{
+			@extend %flex-row;
+			@extend %js-c;
+			@extend %al-s;
+			min-height: 100%;
+			width: 100%;
+			div
+				{
+				flex-wrap: nowrap;
+				min-height: auto;
+				width: 60vw;
+				margin-bottom: $pt * 3;
+				img
+					{
+					width: $pt * 10;
+					margin-right: $pt * 3;
+					}
+				article
+					{
+					width: 100%;
+					p
+						{
+						abbr
+							{
+							border-bottom: 2px solid $pink-0;
+							&:hover
+								{
+								cursor: help;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	
+hr
+	{
+	border: none;
+	border-top: 3px dotted $pink-1;
+	background-color: $pink-0;
+	height: 1px;
+	width: 100%;
+	margin: 0 ($pt * 2);
+	}
+
+// Expanded
+#exp
+	{
+	section
+		{
+		@include transform(translate3d(-($pt * 10), 0, 0));
+		padding: 0 0 ($pt * 3);
+		opacity: 0;
+		dl
+			{
+			margin: 0 0 ($pt * 3);
+			width: 80%;
+			dd
+				{
+				@extend %flex-row;
+				@extend %al-c-c;
+				@extend %js-s;
+				flex-wrap: nowrap;
+				margin: ($pt / 2) 0;
+				p
+					{
+					white-space: nowrap;
+					}
+				}
+			}
+		figure
+			{
+			@extend %flex-col;
+			@extend %al-c-c;
+			@extend %js-s;
+			width: 100%;
+			img
+				{
+				width: 80%;
+				&:first-of-type
+					{
+					border-radius: ($pt * 2) ($pt * 2) 0 0;
+					}
+				&:last-of-type
+					{
+					border-radius: 0 0 ($pt * 2) ($pt * 2);
+					}
+				}
+			}
+		}
+	}
+
+
+// Desktop
+@media screen and (min-width: 768px) {
+	#one
+		{
+		button, #back
+			{
+			em
+				{
+					svg
+					{
+					height: $pt * 2;
+					width: $pt * 2;
+					}
+				}
+			}
+		section
+			{
+			div
+				{
+				grid-template-columns: repeat(3, auto);
+				margin: ($pt * 2) 0 0;
+				}
+			}
+		}
+}
+
+// Mobile
+@media screen and (max-width: 768px) {
+	// Mobile Semantic
+	*
+		{
+		-webkit-tap-highlight-color: transparent;
+		}
+	aside
+		{
+		section
+			{
+			header
+				{
+				align-content: flex-start;
+				align-items: flex-start;
+				min-height: 25%;
+				padding: 0 ($pt * 5) 0;
+				margin: 0 0 ($pt * 4);
+				}
+			.witch
+				{
+				height: $pt * 11;
+				display: block;
+				position: absolute;
+				margin: ($pt * 5 ) 0 0;
+				}
+			}
+		}
+		
+	// Buttons
+	#one, #two
+		{
+		button, #back
+			{
+			em
+				{
+					svg
+					{
+					height: $pt * 3;
+					width: $pt * 3;
+					}
+				}
+			}
+		}
+		
+	// Main
+	#one
+		{
+		section
+			{
+			div
+				{
+				width: 100%;
+				figure
+					{
+					width: 100%;
+					a
+						{
+						height: 100%;
+						width: 80%;
+						margin-bottom: $pt;
+						}
+					}
+				}
+			}
+		}
+	#two
+		{
+		div
+			{
+			div
+				{
+				flex-direction: column;
+				width: 80%;
+				img
+					{
+					width: $pt * 12;
+					margin-bottom: $pt;
+					}
+				}
+			}
+		}
+	}
